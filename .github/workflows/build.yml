@@ -1,0 +1,80 @@
+name: build
+
+on:
+  push:
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest tests/ -q
+
+  linux:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install pyinstaller pytest>=8
+      - run: >
+          pyinstaller --onefile --name ltscheck --console
+          --add-data="data/whitelist_seed.json:data"
+          --exclude-module=scrapling --exclude-module=flet main.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ltscheck-linux
+          path: dist/ltscheck
+
+  windows:
+    needs: test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install pyinstaller "flet>=1.0"
+      - run: >
+          pyinstaller --onefile --name ltscheck --console
+          --add-data="data/whitelist_seed.json;data"
+          --exclude-module=scrapling --exclude-module=flet main.py
+      - run: flet pack gui_main.py --name ltscheck-gui --add-data "data/whitelist_seed.json;data"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ltscheck-windows
+          path: |
+            dist/ltscheck.exe
+            dist/ltscheck-gui.exe
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [linux, windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ltscheck-linux
+          path: release
+      - uses: actions/download-artifact@v4
+        with:
+          name: ltscheck-windows
+          path: release
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: release/*
