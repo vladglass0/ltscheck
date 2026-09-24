@@ -10,6 +10,7 @@ dist/
 
 # Скачанные тулзы и отчёты
 tools/
+ltscheck/
 report.html
 report.json
 checkmods_*.txt

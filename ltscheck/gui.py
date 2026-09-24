@@ -165,7 +165,7 @@ def main(page) -> None:
     # --- вкладка "Тулзы" (кнопки «Скачать» + «Скачать все», лог, автозапуск) ---
     from .tools import download_and_launch, download_tools, load_manifest
     dl_manifest = load_manifest()
-    dest_field = ft.TextField(label="Папка для тулзов", value="tools", expand=True)
+    dest_field = ft.TextField(label="Папка для тулзов", value="ltscheck", expand=True)
     dl_overall = ft.Text("")
     dl_buttons: dict[str, object] = {}
     dl_states: dict[str, object] = {}
