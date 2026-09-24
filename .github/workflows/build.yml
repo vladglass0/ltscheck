@@ -54,7 +54,7 @@ jobs:
           pyinstaller --onefile --name ltscheck --console
           --add-data="data/whitelist_seed.json;data"
           --exclude-module=scrapling --exclude-module=flet main.py
-      - run: flet pack gui_main.py --name ltscheck-gui --add-data "data/whitelist_seed.json;data"
+      - run: flet pack gui_main.py --name ltscheck-gui --add-data "data/whitelist_seed.json;data" -y
       - uses: actions/upload-artifact@v4
         with:
           name: ltscheck-windows
