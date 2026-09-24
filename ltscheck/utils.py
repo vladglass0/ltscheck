@@ -2,7 +2,15 @@
 from __future__ import annotations
 
 import os
+import sys
 from datetime import datetime, timedelta
+
+
+def resource_path(*parts: str) -> str:
+    """Путь к данным: во frozen-сборке — sys._MEIPASS, иначе корень репо."""
+    if getattr(sys, "frozen", False) and hasattr(sys, "_MEIPASS"):
+        return os.path.join(sys._MEIPASS, *parts)  # type: ignore[attr-defined]
+    return os.path.join(os.path.dirname(__file__), "..", *parts)
 
 
 def days_old(mtime_ts: float, now: datetime | None = None) -> float:

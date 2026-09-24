@@ -249,6 +249,9 @@ def main(page) -> None:
                          ft.FilledButton("Папка…", on_click=make_pick(dest_field)),
                          ft.FilledButton("Скачать все", on_click=on_download_all),
                          dl_overall])]
+    if not dl_manifest:
+        tool_rows.append(ft.Text("Нет манифеста тулзов (data/tools_manifest.json не найден в сборке).",
+                                 color=ft.Colors.RED_400))
     for t in dl_manifest:
         name = t["name"]
         st = ft.Text("", size=12)

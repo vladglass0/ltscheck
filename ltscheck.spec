@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[('data/whitelist_seed.json', 'data')],
+    datas=[('data/whitelist_seed.json', 'data'), ('data/tools_manifest.json', 'data')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

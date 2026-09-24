@@ -11,8 +11,9 @@ import time
 import urllib.robotparser as robotparser
 
 from . import rules
+from .utils import resource_path
 
-SEED_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "whitelist_seed.json")
+SEED_PATH = resource_path("data", "whitelist_seed.json")
 
 PAGES = ("visuals", "applications", "news")
 

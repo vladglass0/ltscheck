@@ -23,7 +23,9 @@
 
 ## PyInstaller
 
-- `--add-data` separator is `:` on Linux, `;` on Windows. Seed path resolves via `__file__` (`ltscheck/../data`), so keep the `data` dest dir name.
+- `--add-data` separator is `:` on Linux, `;` on Windows. Bundle BOTH `data/whitelist_seed.json`
+  and `data/tools_manifest.json` (missing manifest = empty Tools tab). Paths resolve via
+  `utils.resource_path()` (`sys._MEIPASS` frozen, repo root otherwise).
 - CLI build excludes heavy optionals: `--exclude-module=scrapling --exclude-module=flet`. Drop the flet exclusion for GUI builds (use `flet pack gui_main.py` instead).
 - **No cross-compilation**: Windows `.exe` for players must be built on Windows.
 

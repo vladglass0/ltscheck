@@ -20,9 +20,10 @@ import urllib.request
 import zipfile
 
 from . import rules
+from .utils import resource_path
 
 BASE = "https://mods.holyworld.me"
-MANIFEST_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "tools_manifest.json")
+MANIFEST_PATH = resource_path("data", "tools_manifest.json")
 UA = "ltscheck/1.0"
 
 

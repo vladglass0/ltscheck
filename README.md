@@ -9,10 +9,12 @@
 ```bash
 # Linux (тестовая сборка):
 pyinstaller --onefile --name ltscheck --console \
-  --add-data="data/whitelist_seed.json:data" --exclude-module=scrapling main.py
+  --add-data="data/whitelist_seed.json:data" \
+  --add-data="data/tools_manifest.json:data" --exclude-module=scrapling main.py
 # Windows (релиз для ПК игрока):
 pyinstaller --onefile --name ltscheck --console \
-  --add-data="data/whitelist_seed.json;data" --exclude-module=scrapling main.py
+  --add-data="data/whitelist_seed.json;data" \
+  --add-data="data/tools_manifest.json;data" --exclude-module=scrapling main.py
 ```
 
 По `manual.md` (Rev by MeYuugao) и сайту
