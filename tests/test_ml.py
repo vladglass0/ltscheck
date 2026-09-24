@@ -55,3 +55,15 @@ def test_checktxt_vm_and_104(tmp_path):
 def test_checktxt_clean(tmp_path):
     p = make_checktxt(str(tmp_path / "check.txt"))
     assert "BAN" not in [f.level for f in parse_checktxt(p)]
+
+
+def test_gen_ps1_markers(tmp_path):
+    from ltscheck.checktxt_gen import render_ps1, write_ps1
+    ps1 = render_ps1()
+    for marker in ("Модель системы", "Виртуальные устройства", "Последнее включение ПК",
+                   "PcaSvc", "DPS", "SysMain", "EventLog", "bam",
+                   "EventID=104", "EventID=3079", "СПИСОК ТВИНКОВ",
+                   "setting user:", "usercache.json", "usernamecache.json"):
+        assert marker in ps1, marker
+    p = write_ps1(str(tmp_path / "check.ps1"))
+    assert open(p, encoding="utf-8-sig").read() == ps1

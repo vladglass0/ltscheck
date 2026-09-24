@@ -37,6 +37,29 @@ def test_main_builds_tabs():
     assert len(page.services) == 1
 
 
+def test_check_ps1_button_present():
+    import flet as ft2
+    page = FakePage()
+    gui.main(page)
+    found = []
+
+    def walk(c):
+        if isinstance(c, ft2.FilledButton) and getattr(c, "content", None) == "Создать check.ps1":
+            found.append(c)
+        for child in getattr(c, "controls", []) or []:
+            walk(child)
+        content = getattr(c, "content", None)
+        if isinstance(content, list):
+            for child in content:
+                walk(child)
+        elif content is not None and not isinstance(content, str):
+            walk(content)
+
+    for top in page.added:
+        walk(top)
+    assert len(found) == 1
+
+
 def test_tools_tab_buttons():
     import flet as ft2
     from ltscheck.tools import load_manifest

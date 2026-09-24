@@ -26,9 +26,10 @@ python -m ltscheck.cli full --mc-dir /dump/.minecraft --scan-root /dump --checkt
 echo $?  # 0 CLEAN, 1 WARN, 2 BAN
 ```
 
-Команды: `scan-mc | scan-fs | analyze-jar | parse-checktxt | full | tools | whitelist-refresh | gui`.
-`tools --list` — manifest 31 тулзы; `tools --only RegScanner --dest tools` — скачать;
-`tools --resolve data/tools_manifest.json` — maintainer-перемаппинг URL.
+Команды: `scan-mc | scan-fs | analyze-jar | parse-checktxt | gen-ps1 | full | tools | whitelist-refresh | gui`.
+`gen-ps1 --out check.ps1` — скрипт для запуска на ПК игрока (собирает check.txt);
+в GUI та же кнопка «Создать check.ps1» на вкладке «Проверка».
+`tools --list` — manifest 31 тулзы; `tools --only RegScanner --dest tools` — скачать.
 
 ## GUI (Flet)
 

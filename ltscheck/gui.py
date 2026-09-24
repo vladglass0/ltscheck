@@ -66,6 +66,16 @@ def main(page) -> None:
             check_field.value = files[0].path
             page.update()
 
+    async def save_ps1(_):
+        from .checktxt_gen import render_ps1
+        path = await picker.save_file(file_name="check.ps1")
+        if path:
+            with open(path, "w", encoding="utf-8-sig") as f:
+                f.write(render_ps1())
+            status.value = (f"check.ps1 сохранён: {path}. Запустите его на ПК игрока "
+                            "в PowerShell от администратора, заберите check.txt.")
+            page.update()
+
     def set_busy(on: bool, msg: str = ""):
         progress.visible = on
         status.value = msg
@@ -121,7 +131,8 @@ def main(page) -> None:
     check_tab = ft.Column(controls=[
         ft.Row([mc_field, ft.FilledButton("Папка…", on_click=make_pick(mc_field))]),
         ft.Row([root_field, ft.FilledButton("Папка…", on_click=make_pick(root_field))]),
-        ft.Row([check_field, ft.FilledButton("Файл…", on_click=pick_check)]),
+        ft.Row([check_field, ft.FilledButton("Файл…", on_click=pick_check),
+                ft.FilledButton("Создать check.ps1", on_click=save_ps1)]),
         ft.Row([ft.FilledButton("Запустить проверку", on_click=on_run),
                 ft.FilledButton("HTML", on_click=on_save_html),
                 ft.FilledButton("JSON", on_click=on_save_json), progress, status]),

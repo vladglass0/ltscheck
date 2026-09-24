@@ -114,6 +114,12 @@ def cmd_whitelist(a: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_gen_ps1(a: argparse.Namespace) -> int:
+    from .checktxt_gen import write_ps1
+    print(write_ps1(a.out))
+    return 0
+
+
 def cmd_gui(a: argparse.Namespace) -> int:
     try:
         from .gui import run
@@ -136,6 +142,7 @@ def build_parser() -> argparse.ArgumentParser:
     s = sub.add_parser("scan-fs", help="Everything-скан дерева"); s.add_argument("--scan-root", required=True); add_out(s); s.set_defaults(f=cmd_scan_fs)
     s = sub.add_parser("analyze-jar", help="статика .jar"); s.add_argument("--jar", required=True); add_out(s); s.set_defaults(f=cmd_jar)
     s = sub.add_parser("parse-checktxt", help="разбор check.txt"); s.add_argument("--checktxt", required=True); add_out(s); s.set_defaults(f=cmd_checktxt)
+    s = sub.add_parser("gen-ps1", help="создать check.ps1 для запуска на ПК игрока"); s.add_argument("--out", default="check.ps1"); s.set_defaults(f=cmd_gen_ps1)
     s = sub.add_parser("full", help="всё сразу")
     s.add_argument("--mc-dir", default=None); s.add_argument("--scan-root", default=None)
     s.add_argument("--checktxt", default=None); add_out(s); s.set_defaults(f=cmd_full)
