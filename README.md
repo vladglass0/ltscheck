@@ -1,3 +1,6 @@
+# LTS Checker
+
+[![build](https://github.com/vladglass0/ltscheck/actions/workflows/build.yml/badge.svg)](https://github.com/vladglass0/ltscheck/actions/workflows/build.yml)
 ## Сборка exe (PyInstaller)
 
 Точка входа — `main.py` (шим: `cli.py` внутри пакета с относительными импортами
