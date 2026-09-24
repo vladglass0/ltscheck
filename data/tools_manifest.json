@@ -1,0 +1,293 @@
+{
+  "generated_by": "tools resolve: Scrapling click-mapping (18 прямых URL) + stable-зеркала вендоров и официальных релизов",
+  "note": "Первичные ссылки — кнопки «Скачать» mods.holyworld.me/applications. Часть кнопок требует входа — для них стабильные зеркала вендоров и релизов. Подписанные release-assets ссылки GitHub живут ~1 час и в манифест не годятся — вместо них stable releases/download. Ocean: публичного URL нет.",
+  "tools": [
+    {
+      "filename": "Everything-1.5.0.1404a.x64.zip",
+      "level": "ml",
+      "name": "Everything",
+      "urls": [
+        "https://www.voidtools.com/Everything-1.5.0.1404a.x64.zip"
+      ],
+      "use": "поиск файлов по имени/весу/контенту"
+    },
+    {
+      "filename": "regscanner.zip",
+      "level": "ml",
+      "name": "RegScanner",
+      "urls": [
+        "https://www.nirsoft.net/utils/regscanner.zip"
+      ],
+      "use": "дата последнего инжекта .dll"
+    },
+    {
+      "filename": "rcsetup155.exe",
+      "level": "ml",
+      "name": "Recuva",
+      "urls": [
+        "https://download.ccleaner.com/rcsetup155.exe"
+      ],
+      "use": "восстановление удалённых файлов (флешка)"
+    },
+    {
+      "filename": "usbdeview-x64.zip",
+      "level": "ml",
+      "name": "usbdeview",
+      "urls": [
+        "https://usbdeview.com/wp-content/uploads/2025/02/usbdeview-x64.zip"
+      ],
+      "use": "анализ USB-устройств"
+    },
+    {
+      "filename": "browserdownloadsview.zip",
+      "level": "ml",
+      "name": "BrowserDownloadsView",
+      "urls": [
+        "https://www.nirsoft.net/utils/browserdownloadsview.zip"
+      ],
+      "use": "загрузки браузеров"
+    },
+    {
+      "filename": "lastactivityview.zip",
+      "level": "ml",
+      "name": "LastActivityView",
+      "urls": [
+        "https://www.nirsoft.net/utils/lastactivityview.zip"
+      ],
+      "use": "подозрительные .exe рядом с javaw"
+    },
+    {
+      "filename": "shellbag_analyzer_cleaner.exe",
+      "level": "ml",
+      "name": "ShellBag",
+      "urls": [
+        "https://privazer.com/ru/shellbag_analyzer_cleaner.exe",
+        "https://github.com/HolyWorldWEB/holy-checker/releases/download/v1.0.1/shellbag_analyzer_cleaner.exe"
+      ],
+      "use": "удалённые/открытые папки"
+    },
+    {
+      "filename": "",
+      "level": "ml",
+      "name": "Ocean",
+      "note": "Публичного URL нет — уточнить у ответственного",
+      "urls": [],
+      "use": "автопроверка системы"
+    },
+    {
+      "filename": "systeminformer-3.2.25011-release-setup.exe",
+      "level": "ml",
+      "name": "System Informer",
+      "urls": [
+        "https://github.com/winsiderss/systeminformer/releases/download/v3.2.25011.2103/systeminformer-3.2.25011-release-setup.exe",
+        "https://sourceforge.net/projects/systeminformer/files/systeminformer-3.2.25011-release-setup.exe/download",
+        "https://github.com/HolyWorldWEB/holy-checker/releases/download/v1.0.1/systeminformer-build-canary-setup.exe"
+      ],
+      "use": "javaw network/DLL-веса/strings"
+    },
+    {
+      "filename": "processhacker-2.39-setup.exe",
+      "level": "ml",
+      "name": "Proccess Hacker 2",
+      "urls": [
+        "https://github.com/processhacker/processhacker/releases/download/v2.39/processhacker-2.39-setup.exe"
+      ],
+      "use": "альтернатива System Informer"
+    },
+    {
+      "filename": "usbdrivelog.zip",
+      "level": "ml",
+      "name": "USBDriveLog",
+      "urls": [
+        "https://www.nirsoft.net/utils/usbdrivelog.zip"
+      ],
+      "use": "история флешек"
+    },
+    {
+      "filename": "JournalTrace.exe",
+      "level": "ml",
+      "name": "JournalTrace",
+      "urls": [
+        "https://github.com/spokwn/JournalTrace/releases/download/1.2/JournalTrace.exe"
+      ],
+      "use": "NTFS-журнал"
+    },
+    {
+      "filename": "executedprogramslist.zip",
+      "level": "ml",
+      "name": "ExecutedProgramsList",
+      "urls": [
+        "https://www.nirsoft.net/utils/executedprogramslist.zip"
+      ],
+      "use": "история запусков .exe"
+    },
+    {
+      "filename": "winprefetchview.zip",
+      "level": "ml",
+      "name": "WinPrefetchView",
+      "urls": [
+        "https://www.nirsoft.net/utils/winprefetchview.zip"
+      ],
+      "use": "prefetch .pf"
+    },
+    {
+      "filename": "winprefetchview.zip",
+      "level": "ml",
+      "name": "PrefetchView++",
+      "note": "Алиас WinPrefetchView",
+      "urls": [
+        "https://www.nirsoft.net/utils/winprefetchview.zip"
+      ],
+      "use": "расширенный prefetch"
+    },
+    {
+      "filename": "recentfilesview.zip",
+      "level": "ml",
+      "name": "RecentFilesView",
+      "urls": [
+        "https://www.nirsoft.net/utils/recentfilesview.zip"
+      ],
+      "use": "недавно открытые файлы"
+    },
+    {
+      "filename": "BAMParser.exe",
+      "level": "ml",
+      "name": "BAMParser",
+      "urls": [
+        "https://github.com/spokwn/BAM-parser/releases/download/v1.2.8/BAMParser.exe"
+      ],
+      "use": "неподписанные .exe (BAM)"
+    },
+    {
+      "filename": "RegistryExplorer.zip",
+      "level": "ml",
+      "name": "RegistryExplorer",
+      "urls": [
+        "https://download.ericzimmermanstools.com/net9/RegistryExplorer.zip",
+        "https://github.com/HolyWorldWEB/holy-checker/releases/download/v1.0.1/RegistryExplorer.zip"
+      ],
+      "use": "чистка реестра"
+    },
+    {
+      "filename": "PathsParser.exe",
+      "level": "ml",
+      "name": "PathsParser",
+      "urls": [
+        "https://github.com/spokwn/PathsParser/releases/download/v1.1/PathsParser.exe"
+      ],
+      "use": "неподписанные dll (csrss)"
+    },
+    {
+      "filename": "JumpListExplorer.zip",
+      "level": "ml",
+      "name": "JumpListExplore",
+      "urls": [
+        "https://download.ericzimmermanstools.com/net9/JumpListExplorer.zip",
+        "https://github.com/HolyWorldWEB/holy-checker/releases/download/v1.0.1/JumpListExplorer.zip"
+      ],
+      "use": "JumpList Automatic/CustomDestinations"
+    },
+    {
+      "filename": "simpleunlocker_release.zip",
+      "level": "ml",
+      "name": "Simpleunlocker",
+      "urls": [
+        "https://simpleunlocker.ds1nc.ru/release/simpleunlocker_release.zip",
+        "https://simpleunlocker.ds1nc.ru/release/simpleunlocker_release-u.zip",
+        "https://github.com/HolyWorldWEB/holy-checker/releases/download/v1.0.1/simpleunlocker_release.zip"
+      ],
+      "use": "дебаггеры (IFEO)"
+    },
+    {
+      "filename": "winrar-x64-722ru.exe",
+      "level": "ml",
+      "name": "WinRar",
+      "urls": [
+        "https://www.rarlab.com/rar/winrar-x64-722ru.exe",
+        "https://www.rarlab.com/rar/winrar-x64-722.exe",
+        "https://www.rarlab.com/rar/winrar-x64-721ru.exe"
+      ],
+      "use": "открыть .zip/.jar как архив"
+    },
+    {
+      "filename": "recaf-cli-0.8.8.jar",
+      "level": "ml",
+      "name": "Recaf",
+      "urls": [
+        "https://github.com/Col-E/Recaf-Launcher/releases/download/0.8.8/recaf-cli-0.8.8.jar"
+      ],
+      "use": "разбор кода модов"
+    },
+    {
+      "filename": "MinecraftVersionChecker.exe",
+      "level": "ml",
+      "name": "VersionChecker",
+      "urls": [
+        "https://github.com/HolyWorldWEB/VersionChecker/releases/download/v1.0.0/MinecraftVersionChecker.exe"
+      ],
+      "use": "проверка версий майнкрафта"
+    },
+    {
+      "filename": "",
+      "level": "ml",
+      "name": "HolyCheck",
+      "note": "Качать со страницы релизов проекта вручную",
+      "urls": [],
+      "use": "скачивание всего набора"
+    },
+    {
+      "filename": "browsinghistoryview.zip",
+      "level": "ml",
+      "name": "BrowsingHistoryView",
+      "urls": [
+        "https://www.nirsoft.net/utils/browsinghistoryview.zip"
+      ],
+      "use": "история браузера"
+    },
+    {
+      "filename": "FTK.Imager.8.3.0.27.zip",
+      "level": "ml",
+      "name": "FTK Imager",
+      "urls": [
+        "https://github.com/HolyWorldWEB/holy-checker/releases/download/v1.0.1/FTK.Imager.8.3.0.27.zip"
+      ],
+      "use": "важное (образы)"
+    },
+    {
+      "filename": "alternatestreamview-x64.zip",
+      "level": "ml",
+      "name": "AlternativeStreamView",
+      "urls": [
+        "https://www.nirsoft.net/utils/alternatestreamview-x64.zip"
+      ],
+      "use": "альтернативные потоки NTFS"
+    },
+    {
+      "filename": "VolatilityWorkbench.zip",
+      "level": "ml",
+      "name": "Volatility Workbench",
+      "urls": [
+        "https://www.osforensics.com/downloads/VolatilityWorkbench.zip"
+      ],
+      "use": "анализ памяти"
+    },
+    {
+      "filename": "windeflogview.zip",
+      "level": "ml",
+      "name": "Windows Defender Log Viewer",
+      "urls": [
+        "https://www.nirsoft.net/utils/windeflogview.zip"
+      ],
+      "use": "логи защитника"
+    },
+    {
+      "filename": "KernelLiveDumpTool.exe",
+      "level": "ml",
+      "name": "KernelLiveDumpTool",
+      "urls": [
+        "https://github.com/spokwn/KernelLiveDumpTool/releases/download/v1.1/KernelLiveDumpTool.exe"
+      ],
+      "use": "kernel-дампы"
+    }
+  ]
+}

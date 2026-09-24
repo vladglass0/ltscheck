@@ -1,0 +1,18 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# PyInstaller
+build/
+dist/
+
+# Скачанные тулзы и отчёты
+tools/
+report.html
+report.json
+checkmods_*.txt
+
+# graphify (генерируется командой)
+graphify-out/
